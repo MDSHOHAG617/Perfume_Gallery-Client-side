@@ -5,7 +5,7 @@ import banner3 from "../images/banner.3.webp";
 
 const Banner = () => {
   return (
-    <row className="d-flex justify-items-center container align-items-center">
+    <row className="d-flex my-5 justify-items-center container align-items-center">
       <div className="left-banner col-8">
         <img className="img-fluid rounded" src={banner} alt="" />
       </div>

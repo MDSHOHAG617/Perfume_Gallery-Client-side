@@ -1,22 +1,38 @@
 import React from "react";
-import { Card, CardGroup } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Items = ({ item }) => {
+  const { _id, img, name, description, price, supplier, Quantity } = item;
   console.log(item);
+  const navigate = useNavigate();
+
+  const handleUpdateBtn = (id) => {
+    navigate(`/inventory/${id}`);
+  };
   return (
     <div>
-      <div className="">
-        <Card className="col-4">
-          <img className="w-50" src={item.img} alt="" />
+      <div className="container my-5 ">
+        <Card className="">
+          <img className="w-75 m-4 " src={img} alt="" />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-              This card has supporting text below as a natural lead-in to
-              additional content.{" "}
-            </Card.Text>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text className="text-muted">{description}</Card.Text>
+            <p className="">
+              Price: <span className="fw-bold">{price}</span>
+            </p>
+            <p className="">Quantity: {Quantity}</p>
+            <p className="">Supplier: {supplier}</p>
           </Card.Body>
           <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
+            <small>
+              <button
+                onClick={() => handleUpdateBtn(_id)}
+                className="btn btn-warning text-dark fw-bold "
+              >
+                Stock Update
+              </button>
+            </small>
           </Card.Footer>
         </Card>
       </div>
