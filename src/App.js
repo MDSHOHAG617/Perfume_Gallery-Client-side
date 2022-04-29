@@ -7,6 +7,7 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Inventory from "./Components/Inventory/Inventory";
 import NotFound from "./Components/NotFound/NotFound";
+import Registration from "./Components/Registration/Registration";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
         <Route
           path="/inventory/:itemsId"
           element={<Inventory></Inventory>}
+        ></Route>
+        <Route
+          path="/registration"
+          element={<Registration></Registration>}
         ></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>

@@ -20,6 +20,12 @@ const Header = () => {
               >
                 Login
               </Link>
+              <Link
+                className="text-dark text-decoration-none p-1 mx-2 "
+                to="/registration"
+              >
+                Registration
+              </Link>
               {/* <Link
                 className="text-dark text-decoration-none p-1 mx-2 "
                 to="/inventory"

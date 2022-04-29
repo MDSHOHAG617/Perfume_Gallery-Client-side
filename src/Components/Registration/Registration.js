@@ -1,12 +1,11 @@
-import { Button } from "bootstrap";
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const Login = () => {
+const Registration = () => {
   return (
     <div>
       <Form className="container w-50 mt-5 bg-light p-5 rounded">
-        <h1 className="mb-5">Please Login</h1>
+        <h1 className="mb-5">Please Registration</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -27,4 +26,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registration;
