@@ -18,18 +18,26 @@ const Registration = () => {
 
   if (error) {
     return (
-      <div className="bg-danger p-5 m-5 container fs-2">
-        <p>Error: {error.message}</p>
+      <div className="bg-danger text-center p-5 m-5 fs-2 text-white">
+        <p>{error.message}</p>
       </div>
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <img
+        className="text-center w-50 img-fluid"
+        src={
+          "https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif"
+        }
+        alt=""
+      />
+    );
   }
   if (user) {
     return (
-      <div>
-        <p>Registered User: {user.email}</p>
+      <div className="bg-danger p-5 m-5 container fs-2">
+        <p>User Registered {user.email}</p>
       </div>
     );
   }

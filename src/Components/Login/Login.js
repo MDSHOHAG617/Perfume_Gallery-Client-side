@@ -1,9 +1,7 @@
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase.init";
 
@@ -18,19 +16,32 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
   if (error) {
     return (
       <div className="bg-danger text-center p-5 m-5 fs-2 text-white">
-        <p>Error: {error.message}</p>
+        <p>{error.message}</p>
       </div>
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <img
+        className="text-center img-fluid"
+        src={
+          "https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif"
+        }
+        alt=""
+      />
+    );
   }
   if (user) {
     return (
-      <div>
+      <div className="bg-danger p-5 m-5 container fs-2">
         <p>Signed In User {user.email}</p>
       </div>
     );
@@ -42,7 +53,10 @@ const Login = () => {
 
   return (
     <div>
-      <Form className="container w-50 mt-5 bg-light p-5 rounded">
+      <Form
+        onSubmit={handleForm}
+        className="container w-50 mt-5 bg-light p-5 rounded"
+      >
         <h1 className="mb-5">Please Login</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

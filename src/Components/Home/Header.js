@@ -30,7 +30,7 @@ const Header = () => {
                 <Link
                   onClick={handleSignOut}
                   className="text-muted text-decoration-none p-1 mx-2 "
-                  to="/login"
+                  to="/"
                 >
                   Logout
                 </Link>
