@@ -1,4 +1,6 @@
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -29,7 +31,7 @@ const Login = () => {
   if (user) {
     return (
       <div>
-        <p>Signed In User: {user.email}</p>
+        <p>Signed In User {user.email}</p>
       </div>
     );
   }
