@@ -14,7 +14,7 @@ const Inventory = () => {
   return (
     <div>
       <h2 className="mt-3">Welcome to Inventory</h2>
-      <div className="container  d-sm-block justify-content-center align-items-center ">
+      <div className="container d-sm-block justify-content-center align-items-center ">
         <img className=" img-fluid" src={items.img} alt="" />
         <Card className="bg-light">
           <Card.Body>
@@ -30,7 +30,7 @@ const Inventory = () => {
             <p className="">
               Stock:{items.Quantity} <span className="text-muted">/left</span>
             </p>
-            <button variant="primary">Go somewhere</button>
+            <button className="btn btn-primary">Delivered</button>
           </Card.Body>
         </Card>
       </div>

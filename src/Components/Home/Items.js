@@ -28,7 +28,7 @@ const Items = ({ item }) => {
             <small>
               <button
                 onClick={() => handleUpdateBtn(_id)}
-                className="btn btn-warning text-dark fw-bold "
+                className="btn btn-primary text-white "
               >
                 Stock Update
               </button>
