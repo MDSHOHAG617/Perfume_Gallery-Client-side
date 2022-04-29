@@ -1,6 +1,7 @@
 import { Button } from "bootstrap";
 import React from "react";
 import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -10,17 +11,19 @@ const Login = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <button className="btn btn-primary" type="submit">
-          Submit
+        <Link className="text-decoration-none " to="/registration">
+          <span>New to perfume gallery?</span>{" "}
+        </Link>
+        <br />
+        <button className="btn btn-primary mt-3" type="submit">
+          Login
         </button>
       </Form>
     </div>
