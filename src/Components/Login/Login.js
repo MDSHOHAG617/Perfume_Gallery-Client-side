@@ -18,7 +18,7 @@ const Login = () => {
 
   if (error) {
     return (
-      <div>
+      <div className="bg-danger p-5 m-5 container fs-2">
         <p>Error: {error.message}</p>
       </div>
     );
