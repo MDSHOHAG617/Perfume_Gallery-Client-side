@@ -1,43 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ManageInventories from "../Inventory/ManageInventories";
-import Banner from "./Banner";
-import Footer from "./Footer";
-import Items from "./Items";
+import AllItems from "./AllItems";
 
-const Home = () => {
+const ManageInventories = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/items")
       .then((res) => res.json())
-      .then((data) => setItems(data.slice(0, 6)));
+      .then((data) => setItems(data));
   }, []);
+
   return (
     <div>
-      <Banner></Banner>
       <div className="container  ">
-        <h1 className="my-5">Products</h1>
+        <h1 className="">All Products</h1>
       </div>
       <div className="">
         <div className="row">
           <div className="col-sm  d-flex justify-content-center p-4">
             {items.map((item) => (
-              <Items key={item._id} item={item}></Items>
+              <AllItems key={item._id} item={item}></AllItems>
             ))}
           </div>
         </div>
+        <Link className="btn btn-success btn-lg my-3 w-25" to="/addItems">
+          Add new item
+        </Link>
       </div>
-      <Link
-        to="/manageInventory"
-        className="btn btn-warning text-black fs-5 my-1"
-      >
-        Manage Inventories
-      </Link>
-
-      <Footer></Footer>
     </div>
   );
 };
 
-export default Home;
+export default ManageInventories;

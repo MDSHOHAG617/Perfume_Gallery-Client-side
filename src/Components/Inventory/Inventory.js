@@ -19,10 +19,8 @@ const Inventory = () => {
 
   return (
     <div>
-      <h2 className="mt-3">Welcome to Inventory</h2>
-      <div className="container d-sm-block justify-content-center align-items-center ">
-        <img className=" img-fluid" src={items.img} alt="" />
-        <Card className="bg-light">
+      <div className="container d-lg-flex d-md-block d-sm-block justify-content-center align-items-center ">
+        <Card className="bg-light ">
           <Card.Body>
             <Card.Title>
               {items.name} ({items.no})
@@ -41,10 +39,27 @@ const Inventory = () => {
             </button>
           </Card.Body>
         </Card>
+        <img className=" img-fluid  " src={items.img} alt="" />
       </div>
-      <div className="">
-        <Link to="/checkout" />
+      <div className="bg-light container p-5 rounded">
+        <form>
+          <h3>Restock the items</h3>
+          <input
+            className="p-1 border-2 rounded bg-light"
+            type="number"
+            placeholder="insert items (Number) "
+          />
+          <br />
+          <button className="btn btn-primary btn-sm mt-2">restock</button>
+        </form>
       </div>
+
+      <Link
+        to="/manageInventory"
+        className="btn btn-warning text-black fs-5 my-3"
+      >
+        Manage Inventories
+      </Link>
     </div>
   );
 };
