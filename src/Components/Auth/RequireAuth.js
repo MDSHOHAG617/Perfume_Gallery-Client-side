@@ -6,13 +6,23 @@ import app from "../../firebase.init";
 
 const RequireAuth = ({ children }) => {
   const auth = getAuth(app);
-  const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
+  const [user, loading, error] = useAuthState(auth);
 
-  if (user) {
-    return children;
+  if (loading) {
+    return (
+      <img
+        src={
+          "https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif"
+        }
+        alt=""
+      />
+    );
+  }
+  if (!user) {
+    return <Navigate to="/login"></Navigate>;
   } else {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return children;
   }
 };
 

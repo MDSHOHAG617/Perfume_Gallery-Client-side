@@ -16,10 +16,12 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
-  let navigate = useNavigate();
-  let location = useLocation();
+  // let navigate = useNavigate();
+  // let location = useLocation();
 
-  let from = location.state?.from?.pathname || "/";
+  // let from = location.state?.from?.pathname || "/";
+  // const location = useLocation();
+  // const from = location.state?.from?.pathName || "/";
 
   if (error) {
     return (
