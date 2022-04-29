@@ -18,7 +18,7 @@ const Login = () => {
 
   if (error) {
     return (
-      <div className="bg-danger p-5 m-5 container fs-2">
+      <div className="bg-danger text-center p-5 m-5 fs-2 text-white">
         <p>Error: {error.message}</p>
       </div>
     );
@@ -33,6 +33,10 @@ const Login = () => {
       </div>
     );
   }
+
+  const handleForm = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <div>
