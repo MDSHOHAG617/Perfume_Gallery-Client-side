@@ -20,12 +20,12 @@ const Header = () => {
               >
                 Login
               </Link>
-              <Link
+              {/* <Link
                 className="text-dark text-decoration-none p-1 mx-2 "
                 to="/inventory"
               >
                 Inventory
-              </Link>
+              </Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

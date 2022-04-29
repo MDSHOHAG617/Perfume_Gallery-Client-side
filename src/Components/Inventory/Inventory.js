@@ -5,11 +5,17 @@ import { Link, useParams } from "react-router-dom";
 const Inventory = () => {
   const { itemsId } = useParams();
   const [items, setItems] = useState({});
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const url = `http://localhost:5000/items/${itemsId}`;
     fetch(url).then((res) => res.json().then((data) => setItems(data)));
   }, []);
+
+  const handleDelivered = () => {
+    const count = items.Quantity - 1;
+    setCount(count);
+  };
 
   return (
     <div>
@@ -30,7 +36,9 @@ const Inventory = () => {
             <p className="">
               Stock:{items.Quantity} <span className="text-muted">/left</span>
             </p>
-            <button className="btn btn-primary">Delivered</button>
+            <button onClick={handleDelivered} className="btn btn-primary">
+              Delivered
+            </button>
           </Card.Body>
         </Card>
       </div>

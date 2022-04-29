@@ -5,6 +5,7 @@ import Header from "./Components/Home/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Inventory from "./Components/Inventory/Inventory";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           path="/inventory/:itemsId"
           element={<Inventory></Inventory>}
         ></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );
