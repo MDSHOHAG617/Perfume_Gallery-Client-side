@@ -21,7 +21,7 @@ const Home = () => {
       </div>
       <div className="">
         <div className="row">
-          <div className="col-sm  d-flex justify-content-center p-4">
+          <div className=" w-50 mx-auto justify-content-center ">
             {items.map((item) => (
               <Items key={item._id} item={item}></Items>
             ))}

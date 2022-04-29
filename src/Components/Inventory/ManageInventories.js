@@ -18,7 +18,7 @@ const ManageInventories = () => {
       </div>
       <div className="">
         <div className="row">
-          <div className="col-sm  d-flex justify-content-center p-4">
+          <div className="w-50 text-center justify-content-center mx-auto p-4">
             {items.map((item) => (
               <AllItems key={item._id} item={item}></AllItems>
             ))}

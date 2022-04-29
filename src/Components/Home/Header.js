@@ -29,6 +29,12 @@ const Header = () => {
               >
                 Registration
               </Link>
+              <Link
+                className="text-dark text-decoration-none  mx-2 "
+                to="/blogs"
+              >
+                Blogs
+              </Link>
               {user ? (
                 <div className="">
                   <Link

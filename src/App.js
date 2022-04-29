@@ -11,6 +11,7 @@ import Registration from "./Components/Registration/Registration";
 import RequireAuth from "./Components/Auth/RequireAuth";
 import ManageInventories from "./Components/Inventory/ManageInventories";
 import AddItems from "./Components/Inventory/AddItems";
+import Blogs from "./Components/Blog/Blogs";
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
           element={<ManageInventories></ManageInventories>}
         ></Route>
         <Route path="/addItems" element={<AddItems></AddItems>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>

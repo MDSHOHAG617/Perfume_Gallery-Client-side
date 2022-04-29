@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const AddItems = () => {
   const handleAddItems = (event) => {
@@ -9,8 +9,9 @@ const AddItems = () => {
     const price = event.target.price.value;
     const Quantity = event.target.Quantity.value;
     const supplier = event.target.supplier.value;
+    const description = event.target.description.value;
 
-    const Items = { img, name, price, Quantity, supplier };
+    const Items = { img, name, price, Quantity, supplier, description };
 
     fetch("http://localhost:5000/items", {
       method: "POST",
@@ -21,11 +22,11 @@ const AddItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("success");
+        alert("item added success");
       });
   };
   return (
-    <div>
+    <div className="bg-light rounded container mt-4 rounded">
       <h2>Add New Products </h2>
       <form onSubmit={handleAddItems}>
         <input
@@ -68,7 +69,19 @@ const AddItems = () => {
           name="supplier"
         />
         <br />
-        <input type="submit" value="Add items" />
+        <input
+          className="p-2 m-2 w-50"
+          type="text"
+          required
+          placeholder="Description"
+          name="description"
+        />
+        <br />
+        <input
+          className="bg-primary btn text-white"
+          type="submit"
+          value="Add items"
+        />
       </form>
     </div>
   );
