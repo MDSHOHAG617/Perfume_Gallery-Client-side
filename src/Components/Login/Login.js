@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase.init";
+import GoogleLogIn from "./SocialLogin/GoogleLogIn";
 
 const Login = () => {
   const auth = getAuth(app);
@@ -57,9 +58,9 @@ const Login = () => {
     <div>
       <Form
         onSubmit={handleForm}
-        className="container w-50 mt-5 bg-light p-5 rounded"
+        className="container w-50 mt-2  bg-light p-5 rounded"
       >
-        <h1 className="mb-5">Please Login</h1>
+        <h1 className="mb-3">Please Login</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -92,6 +93,8 @@ const Login = () => {
           Login
         </button>
       </Form>
+
+      <GoogleLogIn></GoogleLogIn>
     </div>
   );
 };

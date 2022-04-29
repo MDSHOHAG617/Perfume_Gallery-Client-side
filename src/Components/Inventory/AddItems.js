@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 const AddItems = () => {
   const handleAddItems = (event) => {
     event.preventDefault();
-    const imgUrl = event.target.url.url;
+    const img = event.target.url.value;
     const name = event.target.name.value;
     const price = event.target.price.value;
     const Quantity = event.target.Quantity.value;
     const supplier = event.target.supplier.value;
 
-    const Items = { imgUrl, name, price, Quantity, supplier };
+    const Items = { img, name, price, Quantity, supplier };
 
     fetch("http://localhost:5000/items", {
       method: "POST",

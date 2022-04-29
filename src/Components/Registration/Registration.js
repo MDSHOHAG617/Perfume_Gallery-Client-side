@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase.init";
+import GoogleLogIn from "../Login/SocialLogin/GoogleLogIn";
 
 const Registration = () => {
   const auth = getAuth(app);
@@ -44,8 +45,8 @@ const Registration = () => {
 
   return (
     <div>
-      <Form className="container w-50 mt-5 bg-light p-5 rounded">
-        <h1 className="mb-5">Please Registration</h1>
+      <Form className="container w-50 mt-2 bg-light p-5 rounded">
+        <h1 className="mb-3">Please Registration</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -78,6 +79,8 @@ const Registration = () => {
           Register
         </button>
       </Form>
+
+      <GoogleLogIn></GoogleLogIn>
     </div>
   );
 };
