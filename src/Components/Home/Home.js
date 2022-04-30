@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ManageInventories from "../Inventory/ManageInventories";
+import BeFresh from "./AnotherSection/BeFresh";
+import JoinUs from "./AnotherSection/JoinUs";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import Items from "./Items";
@@ -16,8 +17,10 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <BeFresh></BeFresh>
+
       <div className="container  ">
-        <h1 className="my-5">Products</h1>
+        <h1 className="mt-5">Products</h1>
       </div>
       <div className="">
         <div className="row">
@@ -28,13 +31,15 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Link
-        to="/manageInventory"
-        className="btn btn-warning text-black fs-5 my-1"
-      >
-        Manage Inventories
-      </Link>
-
+      <div className="bg-light p-5">
+        <Link
+          to="/manageInventory"
+          className="btn btn-warning text-black fs-5 my-1"
+        >
+          Manage Inventories
+        </Link>
+      </div>
+      <JoinUs></JoinUs>
       <Footer></Footer>
     </div>
   );
