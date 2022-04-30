@@ -1,26 +1,50 @@
 import { getAuth } from "firebase/auth";
 import React from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import app from "../../../firebase.init";
 
 const GoogleLogIn = () => {
   const auth = getAuth(app);
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [
+    signInWithGoogle,
+    googleUser,
+    googleLoading,
+    googleError,
+  ] = useSignInWithGoogle(auth);
 
-  if (error) {
+  const [user, loading, error] = useAuthState(auth);
+
+  if (user) {
+    console.log(user.email);
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+      });
+  }
+
+  if (googleError) {
     return (
       <div>
-        <p>Error: {error.message}</p>
+        <p>Error: {googleError.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (googleLoading) {
     return <p>Loading...</p>;
   }
-  if (user) {
+  if (googleUser) {
     return (
-      <div>
-        <p>Signed In User: {user.email}</p>
+      <div className="bg-danger text-center p-2 m-5 fs-2 text-white">
+        <p>Signed In User {googleUser.email}</p>
       </div>
     );
   }

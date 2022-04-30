@@ -1,7 +1,10 @@
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../firebase.init";
 import GoogleLogIn from "./SocialLogin/GoogleLogIn";
@@ -14,11 +17,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [
     signInWithEmailAndPassword,
-    user,
-    loading,
-    error,
+    googleUer,
+    googleLoading,
+    googleError,
   ] = useSignInWithEmailAndPassword(auth);
 
+  const [user] = useAuthState(auth);
   const handlePasswordReset = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
@@ -33,17 +37,15 @@ const Login = () => {
   // let location = useLocation();
 
   // let from = location.state?.from?.pathname || "/";
-  // const location = useLocation();
-  // const from = location.state?.from?.pathName || "/";
 
-  if (error) {
+  if (googleError) {
     return (
       <div className="bg-danger text-center p-5 m-5 fs-2 text-white">
-        <p>{error.message}</p>
+        <p>{googleError.message}</p>
       </div>
     );
   }
-  if (loading) {
+  if (googleLoading) {
     return (
       <img
         className="text-center img-fluid"
@@ -54,10 +56,10 @@ const Login = () => {
       />
     );
   }
-  if (user) {
+  if (googleUer) {
     return (
       <div className="bg-danger p-5 m-5 container fs-2">
-        <p>Signed In User {user.email}</p>
+        <p>Signed In User {googleUer.email}</p>
       </div>
     );
   }
