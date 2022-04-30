@@ -6,7 +6,7 @@ const ManageInventories = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://arcane-refuge-46120.herokuapp.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

@@ -13,7 +13,7 @@ const AddItems = () => {
 
     const Items = { img, name, price, Quantity, supplier, description };
 
-    fetch("http://localhost:5000/items", {
+    fetch("https://arcane-refuge-46120.herokuapp.com/items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

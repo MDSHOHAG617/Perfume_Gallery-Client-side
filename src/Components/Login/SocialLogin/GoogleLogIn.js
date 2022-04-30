@@ -16,7 +16,7 @@ const GoogleLogIn = () => {
 
   if (user) {
     console.log(user.email);
-    fetch("http://localhost:5000/login", {
+    fetch("https://arcane-refuge-46120.herokuapp.com/login", {
       method: "POST",
       body: JSON.stringify({
         email: user.email,

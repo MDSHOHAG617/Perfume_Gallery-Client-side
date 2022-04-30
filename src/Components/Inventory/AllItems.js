@@ -5,7 +5,7 @@ const AllItems = ({ item }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://arcane-refuge-46120.herokuapp.com/items")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -16,7 +16,7 @@ const AllItems = ({ item }) => {
     const proceed = window.confirm("Are you sure you want to delete? ");
     if (proceed) {
       console.log("deleting user id", id);
-      const url = `http://localhost:5000/items/${id}`;
+      const url = `https://arcane-refuge-46120.herokuapp.com/items/${id}`;
 
       fetch(url, {
         method: "DELETE",

@@ -14,7 +14,7 @@ const Inventory = () => {
   //   let count = number + 1;
   //   setNumber(count);
 
-  //   fetch(`http://localhost:5000/items/${id}`, {
+  //   fetch(`https://arcane-refuge-46120.herokuapp.com/items/${id}`, {
   //     method: "PUT",
   //     headers: {
   //       "content-type": "application/json",
@@ -26,7 +26,7 @@ const Inventory = () => {
   // };
 
   // const handleRestock = (id) => {
-  //   fetch(`http://localhost:5000/items/${id}`, {
+  //   fetch(`https://arcane-refuge-46120.herokuapp.com/items/${id}`, {
   //     method: "PUT",
   //     headers: {
   //       "content-type": "application/json",
@@ -42,7 +42,7 @@ const Inventory = () => {
   // const inputValue = parseInt(updateQuantity);
 
   useEffect(() => {
-    const url = `http://localhost:5000/items/${itemsId}`;
+    const url = `https://arcane-refuge-46120.herokuapp.com/items/${itemsId}`;
     fetch(url).then((res) =>
       res.json().then((data) => {
         setItems(data);
