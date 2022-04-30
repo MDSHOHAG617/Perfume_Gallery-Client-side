@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendEmailVerification } from "firebase/auth";
 import app from "../../firebase.init";
 import GoogleLogIn from "../Login/SocialLogin/GoogleLogIn";
 
@@ -15,7 +15,7 @@ const Registration = () => {
     user,
     loading,
     error,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   if (error) {
     return (

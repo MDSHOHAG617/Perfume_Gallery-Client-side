@@ -2,9 +2,11 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../firebase.init";
 import GoogleLogIn from "./SocialLogin/GoogleLogIn";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const auth = getAuth(app);
@@ -16,6 +18,16 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast("Email sent!");
+      })
+      .catch((err) => {
+        toast(err.message);
+      });
+  };
 
   // let navigate = useNavigate();
   // let location = useLocation();
@@ -85,6 +97,16 @@ const Login = () => {
           <span>New to perfume gallery?</span>{" "}
         </Link>
         <br />
+
+        <Link
+          onClick={handlePasswordReset}
+          to=""
+          className="text-danger text-decoration-none"
+        >
+          Forget password?
+        </Link>
+        <br />
+
         <button
           onClick={() => signInWithEmailAndPassword(email, password)}
           className="btn btn-primary mt-3"
@@ -92,6 +114,7 @@ const Login = () => {
         >
           Login
         </button>
+        <ToastContainer></ToastContainer>
       </Form>
 
       <GoogleLogIn></GoogleLogIn>
