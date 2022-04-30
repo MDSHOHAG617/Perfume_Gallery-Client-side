@@ -26,7 +26,7 @@ const GoogleLogIn = () => {
   }
 
   return (
-    <div className="d-flex justify-content-center my-3 p-2">
+    <div className="d-lg-flex d-sm-block justify-content-center my-3 p-2">
       <button
         onClick={() => signInWithGoogle()}
         className="btn btn-xl bg-dark text-white p-3 m-2 "

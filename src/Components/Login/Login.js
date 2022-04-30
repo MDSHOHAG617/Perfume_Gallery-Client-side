@@ -70,7 +70,7 @@ const Login = () => {
     <div>
       <Form
         onSubmit={handleForm}
-        className="container w-50 mt-2  bg-light p-5 rounded"
+        className="container w-md-75 w-sm-100 mt-2  bg-light p-5 rounded"
       >
         <h1 className="mb-3">Please Login</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">

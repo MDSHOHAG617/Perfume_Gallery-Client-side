@@ -33,9 +33,9 @@ const AllItems = ({ item }) => {
   };
   return (
     <div>
-      <div className="container my-5 ">
+      <div className="container my-5 w-50 ">
         <Card className="">
-          <img className="w-75 m-4 " src={img} alt="" />
+          <img className=" m-4 img-fluid " src={img} alt="" />
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text className="text-muted">{description}</Card.Text>

@@ -5,16 +5,14 @@ import { Link, useParams } from "react-router-dom";
 const Inventory = () => {
   const { itemsId } = useParams();
   const [items, setItems] = useState({});
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const url = `http://localhost:5000/items/${itemsId}`;
     fetch(url).then((res) => res.json().then((data) => setItems(data)));
   }, []);
 
-  const handleDelivered = () => {
-    const count = items.Quantity - 1;
-    setCount(count);
+  const handleForm = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -34,15 +32,13 @@ const Inventory = () => {
             <p className="">
               Stock:{items.Quantity} <span className="text-muted">/left</span>
             </p>
-            <button onClick={handleDelivered} className="btn btn-primary">
-              Delivered
-            </button>
+            <button className="btn btn-primary">Delivered</button>
           </Card.Body>
         </Card>
         <img className=" img-fluid  " src={items.img} alt="" />
       </div>
       <div className="bg-light container p-5 rounded">
-        <form>
+        <form onSubmit={handleForm}>
           <h3>Restock the items</h3>
           <input
             className="p-1 border-2 rounded bg-light"

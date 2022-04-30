@@ -22,8 +22,8 @@ const Home = () => {
       <div className="container  ">
         <h1 className="mt-5">Products</h1>
       </div>
-      <div className="">
-        <div className="row">
+      <div className="container">
+        <div className="row ">
           <div className=" w-50 mx-auto justify-content-center ">
             {items.map((item) => (
               <Items key={item._id} item={item}></Items>
