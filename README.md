@@ -1,4 +1,4 @@
-# Perfume Gallery7
+# Perfume Gallery
 
 ### This is my product base inventory website in this website you can add product delete product etc this is my perfume gallery. it's my first profesional website. you are welcome to my website
 
