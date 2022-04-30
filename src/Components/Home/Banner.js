@@ -10,6 +10,7 @@ const Banner = () => {
         data-bs-ride="carousel"
       >
         <div class="carousel-inner">
+          <div className="carousel-text"></div>
           <div class="carousel-item active">
             <img src={banner} class="d-block w-100" alt="..." />
           </div>
