@@ -10,7 +10,7 @@ const Home = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://arcane-refuge-46120.herokuapp.com/items")
+    fetch("https://perfumegallery.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data.slice(0, 6)));
   }, []);
@@ -22,14 +22,13 @@ const Home = () => {
       <div className="container  ">
         <h1 className="mt-5">Products</h1>
       </div>
-      <div className="container">
-        <div className="row ">
-          <div className=" w-50 mx-auto justify-content-center ">
-            {items.map((item) => (
-              <Items key={item._id} item={item}></Items>
-            ))}
+      <div className="row mx-2">
+        {items.map((item) => (
+          // <Items className="col-lg-3" key={item._id} item={item}></Items>
+          <div key={item.id} id="cardItem" className="col-lg-4 col-md-6 ">
+            <Items item={item} />
           </div>
-        </div>
+        ))}
       </div>
       <div className="bg-light p-5">
         <Link

@@ -5,7 +5,7 @@ const AllItems = ({ item }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://arcane-refuge-46120.herokuapp.com/items")
+    fetch("https://perfumegallery.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -16,7 +16,7 @@ const AllItems = ({ item }) => {
     const proceed = window.confirm("Are you sure you want to delete? ");
     if (proceed) {
       console.log("deleting user id", id);
-      const url = `https://arcane-refuge-46120.herokuapp.com/items/${id}`;
+      const url = `https://perfumegallery.onrender.com/items/${id}`;
 
       fetch(url, {
         method: "DELETE",

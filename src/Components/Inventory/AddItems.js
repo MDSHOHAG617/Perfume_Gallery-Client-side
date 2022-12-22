@@ -13,7 +13,7 @@ const AddItems = () => {
 
     const Items = { img, name, price, Quantity, supplier, description };
 
-    fetch("https://arcane-refuge-46120.herokuapp.com/items", {
+    fetch("https://perfumegallery.onrender.com/items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

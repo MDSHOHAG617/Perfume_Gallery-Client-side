@@ -16,7 +16,7 @@ const GoogleLogIn = () => {
 
   if (user) {
     console.log(user.email);
-    fetch("https://arcane-refuge-46120.herokuapp.com/login", {
+    fetch("https://perfumegallery.onrender.com/login", {
       method: "POST",
       body: JSON.stringify({
         email: user.email,

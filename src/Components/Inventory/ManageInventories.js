@@ -6,7 +6,7 @@ const ManageInventories = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://arcane-refuge-46120.herokuapp.com/items")
+    fetch("https://perfumegallery.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

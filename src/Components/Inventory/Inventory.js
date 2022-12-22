@@ -14,7 +14,7 @@ const Inventory = () => {
   //   let count = number + 1;
   //   setNumber(count);
 
-  //   fetch(`https://arcane-refuge-46120.herokuapp.com/items/${id}`, {
+  //   fetch(`https://perfumegallery.onrender.com/items/${id}`, {
   //     method: "PUT",
   //     headers: {
   //       "content-type": "application/json",
@@ -26,7 +26,7 @@ const Inventory = () => {
   // };
 
   // const handleRestock = (id) => {
-  //   fetch(`https://arcane-refuge-46120.herokuapp.com/items/${id}`, {
+  //   fetch(`https://perfumegallery.onrender.com/items/${id}`, {
   //     method: "PUT",
   //     headers: {
   //       "content-type": "application/json",
@@ -42,7 +42,7 @@ const Inventory = () => {
   // const inputValue = parseInt(updateQuantity);
 
   useEffect(() => {
-    const url = `https://arcane-refuge-46120.herokuapp.com/items/${itemsId}`;
+    const url = `https://perfumegallery.onrender.com/items/${itemsId}`;
     fetch(url).then((res) =>
       res.json().then((data) => {
         setItems(data);

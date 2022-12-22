@@ -4,6 +4,8 @@
 
 ## [https://assignment-11-node-mongo.web.app/]
 
+## Admin credentials ->
+
 - google authentication
 - email password authentication
 - can add products

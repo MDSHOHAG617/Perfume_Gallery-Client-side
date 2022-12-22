@@ -12,9 +12,9 @@ const Items = ({ item }) => {
   };
   return (
     <div>
-      <div className="container my-5 card ">
-        <div className="text-center  text-center ">
-          <img className="w-50 border-2  " src={img} alt="" />
+      <div className=" my-5 card border-0">
+        <div className="text-center card-body text-center rounded-3 px-2 shadow-sm  ">
+          <img className="w-50  " src={img} alt="" />
           <div className="">
             <h6>{name}</h6>
             <Card.Text className="text-muted">{description}</Card.Text>
