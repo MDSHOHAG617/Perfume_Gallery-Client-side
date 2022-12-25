@@ -33,7 +33,7 @@ const AllItems = ({ item }) => {
   };
   return (
     <div>
-      <div className="container my-5 w-50 ">
+      <div className="">
         <Card className="">
           <img className=" m-4 img-fluid " src={img} alt="" />
           <Card.Body>

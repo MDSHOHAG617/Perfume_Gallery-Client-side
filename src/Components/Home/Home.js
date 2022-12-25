@@ -30,11 +30,8 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <div className="bg-light p-5">
-        <Link
-          to="/manageInventory"
-          className="btn btn-warning text-black fs-5 my-1"
-        >
+      <div className=" p-5">
+        <Link to="/manageInventory" className="btn btn-primary fs-5 my-1">
           Manage Inventories
         </Link>
       </div>

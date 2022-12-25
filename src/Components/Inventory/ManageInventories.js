@@ -17,12 +17,13 @@ const ManageInventories = () => {
         <h1 className="">All Products</h1>
       </div>
       <div className="">
-        <div className="row">
-          <div className=" text-center justify-content-center mx-auto p-4">
-            {items.map((item) => (
-              <AllItems key={item._id} item={item}></AllItems>
-            ))}
-          </div>
+        <div className=" row mx-2">
+          {items.map((item) => (
+            <div key={item.id} id="cardItem" className="col-lg-4 col-md-6 ">
+              <AllItems item={item} />
+            </div>
+            // <AllItems key={item._id} item={item}></AllItems>
+          ))}
         </div>
         <Link className="btn btn-success btn-lg my-3 w-25" to="/addItems">
           Add new item
